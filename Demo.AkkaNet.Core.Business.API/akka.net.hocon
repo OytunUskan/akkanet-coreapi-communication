@@ -1,0 +1,20 @@
+﻿akka {
+    actor {
+        provider = "Akka.Remote.RemoteActorRefProvider, Akka.Remote"
+            deployment {
+                /calculator {
+                    remote = "akka.tcp://akka-server-system@localhost:8081"
+                }
+				/actorXXX{
+					remote = "akka.tcp://server-system@system2:8888"
+				}
+            }
+        }
+
+    remote {
+        dot-netty.tcp {
+            port = 0 # bound to a dynamic port assigned by the OS
+            hostname = localhost
+        }
+    }
+}
